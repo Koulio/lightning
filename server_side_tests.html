@@ -71,12 +71,22 @@
 1434291251436,21250,192.168.0.12 CPU,,,,,true,0,0,0,0
 </code></pre>
 
-    <p>To run Lightning:</p>
+    <p>To run Lightning standalone JAR:</p>
 
     <pre><code>java -jar lightning-&lt;version&gt;.jar verify \
         -xml=path/to/xml/file \
         --jmeter-csv=path/to/jmeter/csv/file \
         --perfmon-csv=path/to/perfmon/csv/file</code></pre>
+
+    <p>To configure JMeter Lightning Maven Plugin:</p>
+
+    <pre><code>&lt;configuration&gt;
+    &lt;mode&gt;verify&lt;/mode&gt;
+    &lt;testSetXml&gt;path/to/lightning/xml/file&lt;/testSetXml&gt;
+    &lt;jmeterCsv&gt;path/to/jmeter/csv/file&lt;/jmeterCsv&gt;
+    &lt;perfmonCsv&gt;path/to/perfmon/csv/file&lt;/perfmonCsv&gt;
+&lt;/configuration&gt;
+</code></pre>
 
     <p>Sample output:</p>
 
