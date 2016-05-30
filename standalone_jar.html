@@ -23,8 +23,79 @@
 
     <h3><a id="quick-start-guide" class="anchor" href="#quick-start-guide" aria-hidden="true"></a>Quick start guide</h3>
 
-    <p>Check our <a href="https://github.com/automatictester/lightning-example" target="_blank">sample project</a> for
-        details on how to use Lightning Standalone JAR.</p>
+    <p>This is a Lightning standalone JAR usage example.</p>
+
+    <p>Prerequisites:</p>
+
+    <ul>
+        <li>Java 7 or above</li>
+        <li>Git</li>
+        <li>Maven 3</li>
+    </ul>
+
+    <p>Steps:</p>
+
+    <ul>
+        <li>Clone repo with sample project: <code>git clone https://github.com/automatictester/lightning-example.git</code></li>
+        <li>Go to cloned directory: <code>cd lightning-example</code></li>
+        <li>Run JMeter tests with JMeter Maven Plugin: <code>mvn clean verify</code>. JMeter test results will be saved
+            to <code>target/jmeter/results/example.csv</code></li>
+        <li>Run Lightning: <code>java -jar bin/lightning-standalone-5.0.0.jar verify -xml
+            src/test/resources/lightning.xml --jmeter-csv target/jmeter/results/example.csv</code>.
+        </li>
+        <li>You should get console output similar to this:</li>
+    </ul>
+
+<pre><code>Test name:            JMeter home page - average response time
+Test type:            avgRespTimeTest
+Transaction name:     JMeter home page
+Expected result:      Average response time &lt;= 1000
+Actual result:        Average response time = 73.6
+Transaction count:    10
+Longest transactions: [205, 61, 61, 60, 60]
+Test result:          Pass
+
+Test name:            JMeter home page - failed tests
+Test type:            passedTransactionsTest
+Transaction name:     JMeter home page
+Expected result:      Number of failed transactions &lt;= 0
+Actual result:        Number of failed transactions = 0
+Transaction count:    10
+Test result:          Pass
+
+
+============= EXECUTION SUMMARY =============
+Tests executed:    2
+Tests passed:      2
+Tests failed:      0
+Tests errors:      0
+Test set status:   Pass
+Execution time:    77ms
+##teamcity[buildStatisticValue key='JMeter home page - average response time' value='73.6']
+##teamcity[buildStatisticValue key='JMeter home page - failed tests' value='0']
+</code></pre>
+
+    <p>JUnit XML report will be saved to <code>junit.xml</code>:</p>
+
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;testsuite errors="0" failures="0" name="Lightning" tests="2" time="0"&gt;
+    &lt;testcase name="JMeter home page - average response time" time="0"/&gt;
+    &lt;testcase name="JMeter home page - failed tests" time="0"/&gt;
+&lt;/testsuite&gt;
+</code></pre>
+
+    <p>Properties file for Jenkins Build Name Setter plugin will be saved to <code>lightning-jenkins.properties</code>:
+    </p>
+
+<pre><code>#In Jenkins Build Name Setter Plugin, define build name as: ${BUILD_NUMBER} - ${PROPFILE,file="lightning-jenkins.properties",property="result.string"}
+#Mon May 02 19:08:52 BST 2016
+result.string=Tests executed\: 2, failed\: 0
+</code></pre>
+
+    <p>Feel free to play with JMeter test plan <code>src/test/jmeter/example.jmx</code> and Lightning config file <code>src/test/resources/lightning.xml</code>.
+        Once you familiarised yourself with the tool, create your own JMeter tests, Lightning configuration and plug it
+        into your CI/CD server.</p>
+
 
     <h3><a id="changelog" class="anchor" href="#changelog" aria-hidden="true"></a>Changelog</h3>
 
