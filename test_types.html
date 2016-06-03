@@ -65,7 +65,7 @@ Test type:            avgRespTimeTest
 Test description:     Verify average login times
 Transaction name:     Login
 Expected result:      Average response time &lt;= 4000
-Actual result:        Average response time = 3583.2
+Actual result:        Average response time = 3583
 Transaction count:    5
 Longest transactions: [3780, 3700, 3514, 3474, 3448]
 Test result:          Pass
@@ -148,7 +148,7 @@ Test type:            respTimeStdDevTest
 Test description:     Verify standard deviation
 Transaction name:     Search
 Expected result:      Average standard deviance time &lt;= 500
-Actual result:        Average standard deviance time = 279.07
+Actual result:        Average standard deviance time = 279
 Transaction count:    5
 Test result:          Pass
 </code></pre>
@@ -241,7 +241,7 @@ Test result:          Pass
     &lt;description&gt;Verify nth percentile&lt;/description&gt;
     &lt;transactionName&gt;Search&lt;/transactionName&gt;
     &lt;percentile&gt;80&lt;/percentile&gt;
-    &lt;maxRespTime&gt;11244.2&lt;/maxRespTime&gt;
+    &lt;maxRespTime&gt;11244&lt;/maxRespTime&gt;
 &lt;/nthPercRespTimeTest&gt;
 </code></pre>
 
@@ -266,8 +266,8 @@ Test result:          Pass
 Test type:            nthPercRespTimeTest
 Test description:     Verify nth percentile
 Transaction name:     Search
-Expected result:      80th percentile of transactions have response time &lt;= 11244.2
-Actual result:        80th percentile of transactions have response time = 11244.2
+Expected result:      80th percentile of transactions have response time &lt;= 11244
+Actual result:        80th percentile of transactions have response time = 11244
 Transaction count:    5
 Longest transactions: [3780, 3700, 3514, 3474, 3448]
 Test result:          Pass
@@ -307,8 +307,8 @@ Test result:          Pass
 Test type:            throughputTest
 Test description:     Verify throughput
 Transaction name:     Search
-Expected result:      Throughput &gt;= 2.0 / second
-Actual result:        Throughput = 6.25 / second
+Expected result:      Throughput &gt;= 2 / second
+Actual result:        Throughput = 6 / second
 Transaction count:    5
 Test result:          Pass
 </code></pre>
@@ -398,7 +398,7 @@ Test subtype:         Less than 
 Test description:     Verify server-side resource utilisation 
 Host and metric:      192.168.0.12 CPU 
 Expected result:      Average value &lt; 60000 
-Actual result:        Average value = 15189.0 
+Actual result:        Average value = 15189
 Entries count:        2 
 Test result:          Pass
 </code></pre>
@@ -438,7 +438,7 @@ Test subtype:         Between 
 Test description:     Verify server-side resource utilisation 
 Host and metric:      192.168.0.12 CPU 
 Expected result:      Average value between 10000 and 40000 
-Actual result:        Average value = 15189.0 
+Actual result:        Average value = 15189
 Entries count:        2 
 Test result:          Pass
 </code></pre>
