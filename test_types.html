@@ -153,6 +153,10 @@ Transaction count:    5
 Test result:          Pass
 </code></pre>
 
+    <p><b>Note</b>: There is more than one way to calculate <a href="https://en.wikipedia.org/wiki/Standard_deviation" target="_blank">standard deviation</a>. Lightning calculates the sample standard deviation
+        using <code>org.apache.commons.math3.stat.descriptive.DescriptiveStatistics</code> (which gives same results as STDEV.S in MS Excel),
+        not the population standard deviation (STDEV.P in MS Excel).</p>
+
     <h3><a id="passed-transactions" class="anchor" href="#passed-transactions" aria-hidden="true"></a>Passed Transactions Test
     </h3>
 
@@ -231,8 +235,7 @@ Test result:          Pass
     <h3><a id="n-th-percentile-response-time" class="anchor" href="#n-th-percentile-response-time" aria-hidden="true"></a>n-th Percentile Response Time Test
     </h3>
 
-    <p>Verify if response time for n-th percentile of transactions is not higher than given value. This test gives you
-        great flexibility. You can implement e.g. median check using 50th percentile.</p>
+    <p>Verify if response time for n-th percentile of transactions is not higher than given value.</p>
 
     <p>Sample configuration:</p>
 
@@ -272,6 +275,9 @@ Transaction count:    5
 Longest transactions: [3780, 3700, 3514, 3474, 3448]
 Test result:          Pass
 </code></pre>
+
+    <p><b>Note</b>: There is more than one way to calculate <a href="https://en.wikipedia.org/wiki/Percentile" target="_blank">percentile</a>.
+        Lightning calculates the percentile using <code>org.apache.commons.math3.stat.descriptive.DescriptiveStatistics</code> (which gives same results as PERCENTILE.EXC in MS Excel).</p>
 
     <h3><a id="throughput" class="anchor" href="#throughput" aria-hidden="true"></a>Throughput Test
     </h3>
