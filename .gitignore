@@ -1,6 +1,7 @@
 .idea/
 junit.xml
-lightning.iml
+*.iml
 src/
 target.lib/
 target/
+lightning-jenkins.properties
