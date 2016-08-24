@@ -9,8 +9,9 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="resources.js"></script>
 </head>
-<body ng-app="">
+<body ng-app="resourceApp">
 <section class="page-header">
     <h1 class="project-name">Lightning</h1>
     <h2 class="project-tagline">Resources</h2>
@@ -20,16 +21,10 @@
     <a href="resources.html" class="btn">Resources</a>
 </section>
 <a href="https://github.com/automatictester/lightning"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
-<section class="main-content">
 
-    <p><a href="jmeter_configuration.html">Configure JMeter to save relevant data</a></p>
-    <p><a href="ci_cd_server_integration.html">CI/CD server integration</a></p>
-    <p><a href="enhanced_jenkins_integration.html">Enhanced Jenkins integration</a></p>
-    <p><a href="enhanced_teamcity_integration.html">Enhanced TeamCity integration</a></p>
-    <p><a href="test_types.html">Test types</a></p>
-    <p><a href="server_side_tests.html">Server-side tests</a></p>
-    <p><a href="report_mode.html">Report mode</a></p>
+<section class="main-content" ng-controller="ResourceListController">
 
+    <p ng-repeat="resource in resources"><a href="{{resource.title}}.html">{{resource.url}}</a></p>
 
     <footer class="site-footer" ng-include="'footer.html'"></footer>
 
