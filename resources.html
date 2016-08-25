@@ -11,18 +11,18 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="resources.js"></script>
 </head>
-<body ng-app="resourceApp">
+<body data-ng-app="resourceApp">
 <section class="page-header">
     <h1 class="project-name">Lightning</h1>
     <h2 class="project-tagline">Resources</h2>
-    <div ng-include="'top_level_links.html'"></div>
+    <div data-ng-include="'top_level_links.html'"></div>
 </section>
 
 <section class="main-content" ng-controller="ResourceListController">
 
     <p ng-repeat="resource in resources"><a href="{{resource.title}}.html">{{resource.url}}</a></p>
 
-    <footer class="site-footer" ng-include="'footer.html'"></footer>
+    <footer class="site-footer" data-ng-include="'footer.html'"></footer>
 
 </section>
 
