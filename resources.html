@@ -18,9 +18,11 @@
     <div data-ng-include="'top_level_links.html'"></div>
 </section>
 
-<section class="main-content" ng-controller="ResourceListController">
+<section class="main-content" data-ng-controller="ResourceListController">
 
-    <p ng-repeat="resource in resources"><a href="{{resource.title}}.html">{{resource.url}}</a></p>
+    <h3><a id="resource-list" class="anchor" href="#resource-list" aria-hidden="true"></a>Resource list</h3>
+
+    <p data-ng-repeat="resource in resources"><a href="{{resource.title}}.html">{{resource.url}}</a></p>
 
     <footer class="site-footer" data-ng-include="'footer.html'"></footer>
 
