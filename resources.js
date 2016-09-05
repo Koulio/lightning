@@ -25,6 +25,9 @@ resourceApp.controller('ResourceListController', function ResourceListController
     }, {
       title: 'report_mode',
       url: 'Report mode'
+    }, {
+      title: 'performance',
+      url: 'Performance'
     }
   ];
 });
