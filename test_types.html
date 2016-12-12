@@ -37,6 +37,7 @@
     &lt;testName&gt;Test #1&lt;/testName&gt;
     &lt;description&gt;Verify average login times&lt;/description&gt;
     &lt;transactionName&gt;Login&lt;/transactionName&gt;
+    &lt;regexp/&gt;
     &lt;maxAvgRespTime&gt;4000&lt;/maxAvgRespTime&gt;
 &lt;/avgRespTimeTest&gt;
 </code></pre>
@@ -50,6 +51,7 @@
             file in
             <code>label</code> column, if not provided, test applies to all records in JMeter CSV file
         </li>
+        <li>regexp - if name of transaction should be considered to be a regular expression, <code>optional</code></li>
         <li>maxAvgRespTime - maximum average response value for given transaction name, which will not fail the test,
             <code>required</code>, <code>positive integer</code>
         </li>
@@ -78,6 +80,7 @@ Test result:          Pass
     &lt;testName&gt;Test #1&lt;/testName&gt;
     &lt;description&gt;Verify maximum login times&lt;/description&gt;
     &lt;transactionName&gt;Login&lt;/transactionName&gt;
+    &lt;regexp/&gt;
     &lt;maxAllowedRespTime&gt;4000&lt;/maxAllowedRespTime&gt;
 &lt;/maxRespTimeTest&gt;
 </code></pre>
@@ -91,6 +94,7 @@ Test result:          Pass
             file in
             <code>label</code> column, if not provided, test applies to all records in JMeter CSV file
         </li>
+        <li>regexp - if name of transaction should be considered to be a regular expression, <code>optional</code></li>
         <li>maxAllowedRespTime - maximum response value for given transaction name, which will not fail the test, <code>required</code>,
             <code>positive integer</code>
         </li>
@@ -120,6 +124,7 @@ Test result:          Pass
     &lt;testName&gt;Test #2&lt;/testName&gt;
     &lt;description&gt;Verify standard deviation&lt;/description&gt;
     &lt;transactionName&gt;Search&lt;/transactionName&gt;
+    &lt;regexp/&gt;
     &lt;maxRespTimeStdDev&gt;500&lt;/maxRespTimeStdDev&gt;
 &lt;/respTimeStdDevTest&gt;
 </code></pre>
@@ -133,6 +138,7 @@ Test result:          Pass
             file in
             <code>label</code> column, if not provided, test applies to all records in JMeter CSV file
         </li>
+        <li>regexp - if name of transaction should be considered to be a regular expression, <code>optional</code></li>
         <li>maxRespTimeStdDev - maximum value of standard deviation for given transaction name, which will not fail the
             test, <code>required</code>, <code>positive integer</code>
         </li>
@@ -167,6 +173,7 @@ Test result:          Pass
     &lt;testName&gt;Test #3&lt;/testName&gt;
     &lt;description&gt;Verify number of passed tests&lt;/description&gt;
     &lt;transactionName&gt;Login&lt;/transactionName&gt;
+    &lt;regexp/&gt;
     &lt;allowedNumberOfFailedTransactions&gt;0&lt;/allowedNumberOfFailedTransactions&gt;
 &lt;/passedTransactionsTest&gt;
 </code></pre>
@@ -180,6 +187,7 @@ Test result:          Pass
             file in
             <code>label</code> column, if not provided, test applies to all records in JMeter CSV file
         </li>
+        <li>regexp - if name of transaction should be considered to be a regular expression, <code>optional</code></li>
         <li>allowedNumberOfFailedTransactions - maximum number of failed transactions for given transaction name, which
             will not fail the test, <code>required</code>, <code>non-negative integer</code>
         </li>
@@ -206,6 +214,7 @@ Test result:          Pass
     &lt;testName&gt;Test #3&lt;/testName&gt;
     &lt;description&gt;Verify number of passed tests&lt;/description&gt;
     &lt;transactionName&gt;Login&lt;/transactionName&gt;
+    &lt;regexp/&gt;
     &lt;allowedPercentOfFailedTransactions&gt;0&lt;/allowedPercentOfFailedTransactions&gt;
 &lt;/passedTransactionsTest&gt;
 </code></pre>
@@ -240,6 +249,7 @@ Test result:          Pass
     &lt;testName&gt;Test #4&lt;/testName&gt;
     &lt;description&gt;Verify nth percentile&lt;/description&gt;
     &lt;transactionName&gt;Search&lt;/transactionName&gt;
+    &lt;regexp/&gt;
     &lt;percentile&gt;80&lt;/percentile&gt;
     &lt;maxRespTime&gt;11244&lt;/maxRespTime&gt;
 &lt;/nthPercRespTimeTest&gt;
@@ -254,6 +264,7 @@ Test result:          Pass
             file in
             <code>label</code> column, if not provided, test applies to all records in JMeter CSV file
         </li>
+        <li>regexp - if name of transaction should be considered to be a regular expression, <code>optional</code></li>
         <li>percentile - percentile, <code>required</code>, integer in range 1-100</li>
         <li>maxRespTime - maximum number of failed transactions for given transaction name, which will not fail the
             test, <code>required</code>, <code>double</code>
@@ -287,6 +298,7 @@ Test result:          Pass
     &lt;testName&gt;Test #5&lt;/testName&gt;
     &lt;description&gt;Verify throughput&lt;/description&gt;
     &lt;transactionName&gt;Search&lt;/transactionName&gt;
+    &lt;regexp/&gt;
     &lt;minThroughput&gt;2&lt;/minThroughput&gt;
 &lt;/throughputTest&gt;
 </code></pre>
@@ -300,6 +312,7 @@ Test result:          Pass
             file in
             <code>label</code> column, if not provided, test applies to all records in JMeter CSV file
         </li>
+        <li>regexp - if name of transaction should be considered to be a regular expression, <code>optional</code></li>
         <li>minThroughput - minimum throughput, which will not fail the test, <code>required</code>, <code>double</code>
         </li>
     </ul>
@@ -327,6 +340,7 @@ Test result:          Pass
    &lt;testName&gt;Test #4&lt;/testName&gt;
    &lt;description&gt;Verify median response time&lt;/description&gt;
    &lt;transactionName&gt;Search&lt;/transactionName&gt;
+   &lt;regexp/&gt;
    &lt;maxRespTime&gt;11244&lt;/maxRespTime&gt;
 &lt;/medianRespTimeTest&gt;
 </code></pre>
@@ -340,6 +354,7 @@ Test result:          Pass
             file in
             <code>label</code> column, if not provided, test applies to all records in JMeter CSV file
         </li>
+        <li>regexp - if name of transaction should be considered to be a regular expression, <code>optional</code></li>
         <li>maxRespTime - maximum response time, which will not fail the test, <code>required</code>, integer</li>
     </ul>
 
