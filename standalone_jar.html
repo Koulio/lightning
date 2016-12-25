@@ -37,7 +37,7 @@
         <li>Go to cloned directory: <code>cd lightning-example</code></li>
         <li>Run JMeter tests with JMeter Maven Plugin: <code>mvn clean verify</code>. JMeter test results will be saved
             to <code>target/jmeter/results/example.csv</code></li>
-        <li>Run Lightning: <code>java -jar bin/lightning-standalone-5.0.0.jar verify -xml
+        <li>Run Lightning: <code>java -jar bin/lightning-standalone-*.jar verify -xml
             src/test/resources/lightning.xml --jmeter-csv target/jmeter/results/example.csv</code>.
         </li>
         <li>You should get console output similar to this:</li>
@@ -68,7 +68,7 @@ Tests failed:      0
 Tests errors:      0
 Test set status:   Pass
 Execution time:    77ms
-##teamcity[buildStatisticValue key='JMeter home page - average response time' value='73.6']
+##teamcity[buildStatisticValue key='JMeter home page - average response time' value='73']
 ##teamcity[buildStatisticValue key='JMeter home page - failed tests' value='0']
 </code></pre>
 
