@@ -285,7 +285,9 @@ Test result:          Pass
 </code></pre>
 
     <p><b>Note</b>: There is more than one way to calculate <a href="https://en.wikipedia.org/wiki/Percentile" target="_blank">percentile</a>.
-        Lightning calculates the percentile using <code>org.apache.commons.math3.stat.descriptive.DescriptiveStatistics</code> (which gives same results as PERCENTILE.EXC in MS Excel).</p>
+        Lightning calculates percentile using <code>org.apache.commons.math3.stat.descriptive.DescriptiveStatistics</code>
+        <a href="http://commons.apache.org/proper/commons-math/javadocs/api-3.5/org/apache/commons/math3/stat/descriptive/rank/Percentile.EstimationType.html#R_3">R_3 method</a>
+        , which is consistent with JMeter.</p>
 
     <h3><a id="throughput" class="anchor" href="#throughput" aria-hidden="true"></a>Throughput Test
     </h3>
