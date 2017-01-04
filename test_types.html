@@ -156,10 +156,9 @@ Transaction count:    5
 Test result:          Pass
 </code></pre>
 
-    <p><b>Note</b>: There is more than one way to calculate <a href="https://en.wikipedia.org/wiki/Standard_deviation" target="_blank">standard deviation</a>.
-        Lightning calculates standard deviation using <code>org.apache.commons.math3.stat.descriptive.DescriptiveStatistics</code>
-        <a href="http://commons.apache.org/proper/commons-math/javadocs/api-3.5/org/apache/commons/math3/stat/descriptive/rank/Percentile.EstimationType.html#R_3">R_3 method</a>
-        , which is consistent with JMeter.</p>
+    <p><b>Note</b>: There is more than one way to calculate <a href="https://en.wikipedia.org/wiki/Standard_deviation" target="_blank">standard deviation</a>. Lightning calculates the sample standard deviation
+        using <code>org.apache.commons.math3.stat.descriptive.DescriptiveStatistics</code> (which gives same results as STDEV.S in MS Excel),
+        not the population standard deviation (STDEV.P in MS Excel).</p>
 
     <h3><a id="passed-transactions" class="anchor" href="#passed-transactions" aria-hidden="true"></a>Passed Transactions Test
     </h3>
