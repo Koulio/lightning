@@ -81,9 +81,10 @@
     <p>JUnit XML report will be saved to <code>junit.xml</code>:</p>
 
 <pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;testsuite errors="0" failures="0" name="Lightning" tests="2" time="0"&gt;
-    &lt;testcase name="JMeter home page - average response time" time="0"/&gt;
-    &lt;testcase name="JMeter home page - failed tests" time="0"/&gt;
+&lt;testsuite errors="0" failures="0" name="Lightning" tests="3" time="0"&gt;
+    &lt;testcase name="Failed transactions (%)" time="0"/&gt;
+    &lt;testcase name="Failed transactions" time="0"/&gt;
+    &lt;testcase name="80th percentile" time="0"/&gt;
 &lt;/testsuite&gt;
 </code></pre>
 
@@ -91,8 +92,8 @@
     </p>
 
 <pre><code>#In Jenkins Build Name Setter Plugin, define build name as: ${BUILD_NUMBER} - ${PROPFILE,file="lightning-jenkins.properties",property="result.string"}
-#Mon May 02 19:08:52 BST 2016
-result.string=Tests executed\: 2, failed\: 0
+#Tue Feb 14 22:18:18 GMT 2017
+result.string=Tests executed\: 3, failed\: 0
 </code></pre>
 
     <p>Feel free to play with Lightning config file <code>src/test/resources/xml/example.xml</code>.
