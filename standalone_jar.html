@@ -27,7 +27,6 @@
     <ul>
         <li>Java 7 or above</li>
         <li>Git</li>
-        <li>Maven 3</li>
     </ul>
 
     <p>Steps:</p>
@@ -35,42 +34,49 @@
     <ul>
         <li>Clone repo with sample project: <code>git clone https://github.com/deliverymind/lightning-example.git</code></li>
         <li>Go to cloned directory: <code>cd lightning-example</code></li>
-        <li>Run JMeter tests with JMeter Maven Plugin: <code>mvn clean verify</code>. JMeter test results will be saved
-            to <code>target/jmeter/results/example.csv</code></li>
         <li>Run Lightning: <code>java -jar bin/lightning-standalone-*.jar verify -xml
-            src/test/resources/lightning.xml --jmeter-csv target/jmeter/results/example.csv</code>.
+            src/test/resources/xml/example.xml --jmeter-csv src/test/resources/csv/example.csv</code>.
         </li>
         <li>You should get console output similar to this:</li>
     </ul>
 
-<pre><code>Test name:            JMeter home page - average response time
-Test type:            avgRespTimeTest
-Transaction name:     JMeter home page
-Expected result:      Average response time &lt;= 1000
-Actual result:        Average response time = 73.6
-Transaction count:    10
-Longest transactions: [205, 61, 61, 60, 60]
-Test result:          Pass
-
-Test name:            JMeter home page - failed tests
-Test type:            passedTransactionsTest
-Transaction name:     JMeter home page
-Expected result:      Number of failed transactions &lt;= 0
-Actual result:        Number of failed transactions = 0
-Transaction count:    10
-Test result:          Pass
-
-
-============= EXECUTION SUMMARY =============
-Tests executed:    2
-Tests passed:      2
-Tests failed:      0
-Tests errors:      0
-Test set status:   Pass
-Execution time:    77ms
-##teamcity[buildStatisticValue key='JMeter home page - average response time' value='73']
-##teamcity[buildStatisticValue key='JMeter home page - failed tests' value='0']
-</code></pre>
+<pre><code>[main] INFO Test name:            Failed transactions (%)
+[main] INFO Test type:            passedTransactionsTest
+[main] INFO Test description:     Verify number of passed tests
+[main] INFO Transaction name:     Login
+[main] INFO Expected result:      Percent of failed transactions <= 0
+[main] INFO Actual result:        Percent of failed transactions = 0
+[main] INFO Transaction count:    5
+[main] INFO Test result:          Pass
+[main] INFO
+[main] INFO Test name:            Failed transactions
+[main] INFO Test type:            passedTransactionsTest
+[main] INFO Test description:     Verify number of passed tests
+[main] INFO Expected result:      Number of failed transactions <= 0
+[main] INFO Actual result:        Number of failed transactions = 0
+[main] INFO Transaction count:    10
+[main] INFO Test result:          Pass
+[main] INFO
+[main] INFO Test name:            80th percentile
+[main] INFO Test type:            nthPercRespTimeTest
+[main] INFO Test description:     Verify nth percentile
+[main] INFO Transaction name:     Search
+[main] INFO Expected result:      80th percentile of transactions have response time <= 11245
+[main] INFO Actual result:        80th percentile of transactions have response time = 11244
+[main] INFO Transaction count:    5
+[main] INFO Longest transactions: [11250, 11221, 11086, 10769, 10626]
+[main] INFO Test result:          Pass
+[main] INFO
+[main] INFO ============= EXECUTION SUMMARY =============
+[main] INFO Tests executed:    3
+[main] INFO Tests passed:      3
+[main] INFO Tests failed:      0
+[main] INFO Tests errors:      0
+[main] INFO Test set status:   Pass
+[main] INFO Total execution time:    123ms
+[main] INFO ##teamcity[buildStatisticValue key='Failed transactions (%)' value='0']
+[main] INFO ##teamcity[buildStatisticValue key='Failed transactions' value='0']
+[main] INFO ##teamcity[buildStatisticValue key='80th percentile' value='11244']</code></pre>
 
     <p>JUnit XML report will be saved to <code>junit.xml</code>:</p>
 
@@ -89,7 +95,7 @@ Execution time:    77ms
 result.string=Tests executed\: 2, failed\: 0
 </code></pre>
 
-    <p>Feel free to play with JMeter test plan <code>src/test/jmeter/example.jmx</code> and Lightning config file <code>src/test/resources/lightning.xml</code>.
+    <p>Feel free to play with Lightning config file <code>src/test/resources/xml/example.xml</code>.
         Once you familiarised yourself with the tool, create your own JMeter tests, Lightning configuration and plug it
         into your CI/CD server.</p>
 
